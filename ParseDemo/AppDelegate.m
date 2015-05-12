@@ -26,9 +26,22 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     // Parse Object
-    PFObject *demoObject = [PFObject objectWithClassName:@"Demo"];
-    [demoObject setObject:@"yung" forKey:@"dataColumn"];
-    [demoObject save];
+    
+    //My Username Object
+    PFObject *myObject = [PFObject objectWithClassName:@"myObject"];
+    [myObject setObject: [NSNumber numberWithInt:656]forKey:@"visitedCount"];
+    [myObject setObject:@"Yung Dai" forKey:@"userName"];
+    [myObject setObject:@"123456789" forKey:@"userID"];
+    
+    // asynchronously save the data in background "storing data"
+    [myObject saveInBackground];
+    
+    //fetching data
+    PFQuery *query = [PFQuery queryWithClassName:@"myObject"];
+    [query getObjectInBackgroundWithId:@"wOLVXONsX9" block:^(PFObject *userInfo, NSError *error) {
+        NSLog(@"User Info: %@", userInfo);
+    }];
+    
     return YES;
 }
 
