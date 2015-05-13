@@ -9,8 +9,13 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 
+//including the new subclass Course
+#import "Course.h"
 
-@interface AppDelegate ()
+
+@interface AppDelegate () {
+    NSMutableArray *currentUser;
+}
 
 @end
 
@@ -18,15 +23,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Initialise Course Object
+    Course *courseObject = [[Course alloc]init];
     
     // Parse setup
     [Parse setApplicationId:@"7VKyoDCYua9wdMGr4FJb56AK8SaUrnmvrpl6dkoS"
                   clientKey:@"omHaVBfXXThF34FPCemxwq0atvkX1qvFiAYcoebu"];
+    
     // Parse Analytics setup
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    // Parse Object
-    
+    // Creating a Parse Object
     //My Username Object
     PFObject *myObject = [PFObject objectWithClassName:@"myObject"];
     [myObject setObject: [NSNumber numberWithInt:656]forKey:@"visitedCount"];
@@ -36,11 +43,22 @@
     // asynchronously save the data in background "storing data"
     [myObject saveInBackground];
     
+    // storing the Course object
+    courseObject = [Course objectWithoutDataWithObjectId:courseObject.objectId];
+    [courseObject setObject:@"Yung" forKey:@"firstName"];
+    [courseObject setObject:@"Dai" forKey:@"lastName"];
+    [courseObject saveInBackground];
+    
+    
     //fetching data
     PFQuery *query = [PFQuery queryWithClassName:@"myObject"];
-    [query getObjectInBackgroundWithId:@"wOLVXONsX9" block:^(PFObject *userInfo, NSError *error) {
+    [query getObjectInBackgroundWithId:@"wOLVXONsX9"
+                                 block:^(PFObject *userInfo, NSError *error) {
         NSLog(@"User Info: %@", userInfo);
     }];
+    
+    
+    
     
 
     

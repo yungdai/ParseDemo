@@ -30,6 +30,8 @@
 		1A41DC011B00FA8400ECFAB1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41DC001B00FA8400ECFAB1 /* SystemConfiguration.framework */; };
 		1A41DC031B00FA9300ECFAB1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41DC021B00FA9300ECFAB1 /* AudioToolbox.framework */; };
 		1A41DC051B00FA9C00ECFAB1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41DC041B00FA9C00ECFAB1 /* CFNetwork.framework */; };
+		1A6289B31B03978C005186A5 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6289B21B03978C005186A5 /* Course.m */; };
+		1A6289B61B03A238005186A5 /* ReturnObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6289B51B03A238005186A5 /* ReturnObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		1A41DC001B00FA8400ECFAB1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1A41DC021B00FA9300ECFAB1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1A41DC041B00FA9C00ECFAB1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1A6289B11B03978C005186A5 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		1A6289B21B03978C005186A5 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		1A6289B41B03A238005186A5 /* ReturnObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnObject.h; sourceTree = "<group>"; };
+		1A6289B51B03A238005186A5 /* ReturnObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,10 @@
 		1A41DBC01B00F84000ECFAB1 /* ParseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1A6289B11B03978C005186A5 /* Course.h */,
+				1A6289B21B03978C005186A5 /* Course.m */,
+				1A6289B41B03A238005186A5 /* ReturnObject.h */,
+				1A6289B51B03A238005186A5 /* ReturnObject.m */,
 				1A41DBC51B00F84000ECFAB1 /* AppDelegate.h */,
 				1A41DBC61B00F84000ECFAB1 /* AppDelegate.m */,
 				1A41DBCB1B00F84000ECFAB1 /* ViewController.h */,
@@ -282,6 +292,8 @@
 				1A41DBC71B00F84000ECFAB1 /* AppDelegate.m in Sources */,
 				1A41DBCD1B00F84000ECFAB1 /* ViewController.m in Sources */,
 				1A41DBC41B00F84000ECFAB1 /* main.m in Sources */,
+				1A6289B61B03A238005186A5 /* ReturnObject.m in Sources */,
+				1A6289B31B03978C005186A5 /* Course.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +500,7 @@
 				1A41DBE61B00F84000ECFAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A41DBE71B00F84000ECFAB1 /* Build configuration list for PBXNativeTarget "ParseDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +509,7 @@
 				1A41DBE91B00F84000ECFAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
