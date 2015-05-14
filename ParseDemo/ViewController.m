@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "Course.h"
+#import <Parse/Parse.h>
 
 @interface ViewController ()
 

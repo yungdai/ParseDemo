@@ -12,7 +12,7 @@
 
 +(Course *)returnCourse {
     
-    return ;
+    return @"Course";
 }
 
 @end
