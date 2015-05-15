@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Course.h"
+#import <Parse/Parse.h>
+
+// Facebook integration required frameworks
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface ViewController : UIViewController
 

@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 
+// adding the Facebook SDK into the app
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 //including the new subclass Course
 #import "Course.h"
 
@@ -32,6 +36,10 @@
     
     // Parse Analytics setup
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // Facebook API setup
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
     
     // Creating a Parse Object
     //My Username Object
@@ -57,11 +65,6 @@
         NSLog(@"User Info: %@", userInfo);
     }];
     
-    
-    
-    
-
-    
     return YES;
 }
 
@@ -81,6 +84,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -168,5 +172,18 @@
         }
     }
 }
+
+// Facebook SDK method
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+
+
 
 @end

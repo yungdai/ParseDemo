@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="friendship-day-gifts-ideas-20121" translatesAutoresizingMaskIntoConstraints="NO" id="UBz-mU-UuH">
-                                <rect key="frame" x="145" y="128" width="338" height="322"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UBz-mU-UuH">
+                                <rect key="frame" x="50" y="133" width="500" height="334"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UBz-mU-UuH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="113" id="G9W-DR-d9N"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UBz-mU-UuH" secondAttribute="bottom" constant="133" id="TaU-OV-yOH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UBz-mU-UuH" secondAttribute="trailing" constant="34" id="pri-1S-Fhl"/>
+                            <constraint firstItem="UBz-mU-UuH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="szI-bd-R6m"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myImage" destination="UBz-mU-UuH" id="Q2M-Ky-9uw"/>
@@ -30,7 +37,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="friendship-day-gifts-ideas-20121" width="500" height="334"/>
-    </resources>
 </document>
